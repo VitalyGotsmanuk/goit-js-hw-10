@@ -19,7 +19,7 @@ function fetchBreeds() {
 
 // яка очікує ідентифікатор породи, робить HTTP-запит і повертає проміс із даними про кота - результатом запиту. 
 function fetchCatByBreed(breedId) {
-    return fetch (`${urlCat}/${breedId}?api_key=${apiKey}`)
+    return fetch (`${urlCat}?breed_ids=${breedId}&api_key=${apiKey}`)
     .then (response => {
         if (!response.ok){
             throw new Error (response.status);
